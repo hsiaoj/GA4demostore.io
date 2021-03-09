@@ -302,12 +302,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         Object.keys(__products).forEach(function (key) {
           var product = __products[key];
           impressions.push({
-            name: product.name, // Name or ID is required.
-            id: product.id,
+            item_name: product.name, // Name or ID is required.
+            item_id: product.id,
             price: product.price,
-            brand: product.brand,
-            category: product.category,
-            variant: product.variant,
+            item_brand: product.brand,
+            item_category: product.category,
+            item_variant: product.variant,
             list: 'Search Results',
             position: cnt,
           });
@@ -332,14 +332,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           ecommerce: {
             click: {
               actionField: { list: 'Search Results' }, // Optional list property.
-              products: [
+              items: [
                 {
                   name: product.name, // Name or ID is required.
-                  id: product.id,
+                  item_id: product.id,
                   price: product.price,
                   brand: product.brand,
-                  category: product.cat,
-                  variant: product.variant,
+                  item_category: product.cat,
+                  item_variant: product.variant,
                   position: product.position,
                 },
               ],
@@ -355,13 +355,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           "ecommerce": {
             "detail": {
               "actionField": {"list": "Fruit Gallery"},    // "detail" actions have an optional list property.
-              "products": [{
-                  name: product.name, // Name or ID is required.
-                  id: product.id,
+              "items": [{
+                  item_name: product.name, // Name or ID is required.
+                  item_id: product.id,
                   price: product.price,
-                  brand: product.brand,
-                  category: product.cat,
-                  variant: product.variant,
+                  item_brand: product.brand,
+                  item_category: product.cat,
+                  item_variant: product.variant,
                }]
              }
            }
@@ -379,15 +379,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             currencyCode: 'USD',
             add: {
               // "add" actionFieldObject measures.
-              products: [
+              items: [
                 {
                   //  adding a product to a shopping cart.
-                  name: product.name,
-                  id: product.id,
+                  item_name: product.name,
+                  item_id: product.id,
                   price: product.price,
-                  brand: product.brand,
-                  category: product.category,
-                  variant: product.variant,
+                  item_brand: product.brand,
+                  item_category: product.category,
+                  item_variant: product.variant,
                   quantity: 1,
                 },
               ],
@@ -412,15 +412,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             ecommerce: {
               remove: {
                 // "remove" actionFieldObject measures.
-                products: [
+                items: [
                   {
                     //  removing a product to a shopping cart.
-                    name: product.name,
-                    id: product.id,
+                    item_name: product.name,
+                    item_id: product.id,
                     price: product.price,
-                    brand: product.brand,
-                    category: product.category,
-                    variant: product.variant,
+                    item_brand: product.brand,
+                    item_category: product.category,
+                    item_variant: product.variant,
                     quantity: 1,
                   },
                 ],
@@ -517,11 +517,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           if ( iquantity > 0 ) {
             var obj = {
                name: product.name, // Name or ID is required.
-                  id: product.id,
+                  item_id: product.id,
                   price: product.price,
                   brand: product.brand,
-                  category: product.category,
-                  variant: product.variant,
+                  item_category: product.category,
+                  item_variant: product.variant,
                   quantity: iquantity,
                   coupon: '', // Optional fields may be omitted or set to empty string.
             }
@@ -535,14 +535,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           ecommerce: {
             purchase: {
               actionField: {
-                id: Math.floor(Date.now() / 1000), // Transaction ID. Required for purchases and refunds.
+                transaction_id: Math.floor(Date.now() / 1000), // Transaction ID. Required for purchases and refunds.
                 affiliation: 'Online Store',
                 revenue: purchase.finalTotal, // Total transaction value (incl. tax and shipping)
                 tax: purchase.tax,
                 shipping: '5.00',
                 coupon: purchase.useCoupon ? "FRUIT21":"",
               },
-              products: products,
+              items: products,
             },
           },
         };
