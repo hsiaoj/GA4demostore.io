@@ -537,7 +537,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               actionField: {
                 transaction_id: Math.floor(Date.now() / 1000), // Transaction ID. Required for purchases and refunds.
                 affiliation: 'GA4 Online Store',
-                revenue: purchase.finalTotal, // Total transaction value (incl. tax and shipping)
+                value: purchase.finalTotal, // Total transaction value (incl. tax and shipping)
                 tax: purchase.tax,
                 shipping: '5.00',
                 coupon: purchase.useCoupon ? "FRUIT21":"",
