@@ -375,11 +375,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         var product = __products['item' + id];
         updateCart(product, +1);
         var dl = {
-          event: 'addToCart',
+          event: add_to_cart,
           ecommerce: {
             currencyCode: 'USD',
-            add: {
-              // "add" actionFieldObject measures.
               items: [
                 {
                   //  adding a product to a shopping cart.
@@ -392,7 +390,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   quantity: 1,
                 },
               ],
-            },
+            
           },
         };
         dataLayer.push( dl );
@@ -409,10 +407,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           var product = __products['item' + id];
           updateCart(product, -1);
           var dl = {
-            event: 'removeFromCart',
+            event: 'remove_from_cart',
             ecommerce: {
-              remove: {
-                // "remove" actionFieldObject measures.
+              
                 items: [
                   {
                     //  removing a product to a shopping cart.
@@ -425,10 +422,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     quantity: 1,
                   },
                 ],
-              },
+             
             },
           };
-          dataLayer.push( dl );
           dataLayer.push( dl );
           message( 'Remove from Cart', JSON.stringify( dl ));
         }
@@ -479,11 +475,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       function review() {
         var dl = {
-          event: 'checkoutOption',
+          event: 'begin_checkout',
           ecommerce: {
-            checkout_option: {
-              actionField: { step: 1, option: 'review' },
-            },
+            'items': products;
           },
         };
 
