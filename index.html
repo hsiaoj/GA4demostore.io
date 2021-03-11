@@ -315,9 +315,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         });
 
         var dl = {
+          event: 'view_item_list',
           ecommerce: {
-            currencyCode: 'EUR', // Local currency is optional.
-            impressions: impressions,
+            currencyCode: 'EUR', // Local currency is optional
+            items: impressions,
           },
         };
         dataLayer.push( dl );
